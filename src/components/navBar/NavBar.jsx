@@ -2,8 +2,6 @@
 import { Fragment } from 'react'
 import { Disclosure } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-
-import './navBar.css'
 const navigation = [
     { name: 'Dashboard', href: '#', current: true },
     { name: 'Team', href: '#', current: false },
@@ -17,7 +15,7 @@ function classNames(...classes) {
 
 export default function NavBar() {
     return (
-        <Disclosure as="nav"  className="nav h-52">
+        <Disclosure as="nav"  className="bg-grey-backgroud h-52">
             {({ open }) => (
                 <>
                     <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -60,7 +58,7 @@ export default function NavBar() {
                     </div>
 
                     <Disclosure.Panel className="sm:hidden z-40 ">
-                        <div className="bg-grey-backgroud px-2 pb-3 pt-2 absolute top-0 right-0 min-h-full min-w-full">
+                        <div className="bg-grey-backgroud px-2 pb-3 pt-2 absolute top-0 right-0 min-h-full min-w-full z-40">
                             {navigation.map((item) => (
                                 <Disclosure.Button
                                     key={item.name}
@@ -75,7 +73,7 @@ export default function NavBar() {
                                     {item.name}
                                 </Disclosure.Button>
                             ))}
-                            <div className="flex flex-1 justify-center w-80 mix-blend-multiply absolute bottom-0 ml-14">
+                            <div className="flex flex-1 justify-center w-80 mix-blend-multiply absolute bottom-0 m-auto">
                                 <img src="../../../logoKineJpg.png" alt="" />
                             </div>
                         </div>

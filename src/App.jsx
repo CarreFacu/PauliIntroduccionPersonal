@@ -9,7 +9,7 @@ function App() {
     <>
         <NavBar/>
         <Card/>
-        <div className='sm:w-[80%] sm:m-auto sm:h-52 bg-grey-backgroud h-[428px] m-auto'>
+        <div className='sm:w-[80%] sm:m-auto sm:h-52 bg-grey-backgroud h-[428px] m-auto z-10'>
             <CarouselComponent slides ={slidesData}/>
         </div>
 
