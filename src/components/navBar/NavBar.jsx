@@ -2,6 +2,8 @@
 import { Fragment, useState } from 'react'
 import { Disclosure } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Link } from 'react-router-dom'
+
 const navigation = [
     { name: 'Dashboard', href: '#', current: true },
     { name: 'Team', href: '#', current: false },
@@ -53,9 +55,9 @@ export default function NavBar() {
                                 <div className="hidden sm:ml-6 sm:block">
                                     <div className="flex space-x-4">
                                         {navigation.map((item) => (
-                                            <a
+                                            <Link
                                                 key={item.name}
-                                                href={item.href}
+                                                to='/test'
                                                 className={classNames(
                                                     item.current ? 'font-medium bg-gray-900 text-white text-lg italic' : 'font-medium text-black hover:bg-gray-700 hover:text-white text-lg italic',
                                                     'rounded-md px-3 py-2 text-sm font-medium'
@@ -63,7 +65,7 @@ export default function NavBar() {
                                                 aria-current={item.current ? 'page' : undefined}
                                             >
                                                 {item.name}
-                                            </a>
+                                            </Link>
                                         ))}
                                     </div>
                                 </div>
