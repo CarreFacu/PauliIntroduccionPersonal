@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import { Fragment } from 'react'
+import { Fragment, useState } from 'react'
 import { Disclosure } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 const navigation = [
@@ -13,16 +13,30 @@ function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
 
+
 export default function NavBar() {
+    
+    const [scrollEnabled, setScrollEnabled] = useState(true);
+
+    const toggleScroll = () => {
+        console.log('entro aca ?', scrollEnabled)
+        setScrollEnabled(!scrollEnabled);
+        const body = document.body;
+        if (!scrollEnabled) {
+          body.style.overflow = 'auto';
+        } else {
+          body.style.overflow = 'hidden';
+        }
+      };
     return (
-        <Disclosure as="nav"  className="bg-grey-backgroud h-52">
+        <Disclosure as="nav"  className="bg-grey-background h-52">
             {({ open }) => (
                 <>
                     <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                         <div className="relative flex h-16 items-center justify-between">
                             <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
                                 {/* Mobile menu button*/}
-                                <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                                <Disclosure.Button onClick={toggleScroll} className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                                     <span className="absolute -inset-0.5" />
                                     <span className="sr-only">Open main menu</span>
                                     {open ? (
@@ -58,9 +72,10 @@ export default function NavBar() {
                     </div>
 
                     <Disclosure.Panel className="sm:hidden z-40 ">
-                        <div className="bg-grey-backgroud px-2 pb-3 pt-2 absolute top-0 right-0 min-h-full min-w-full z-40">
+                        <div className="bg-grey-background px-2 pb-3 pt-2 absolute top-0 right-0 min-h-full min-w-full z-40">
                             {navigation.map((item) => (
                                 <Disclosure.Button
+                                    onClick={toggleScroll}
                                     key={item.name}
                                     as="a"
                                     href={item.href}
@@ -73,7 +88,7 @@ export default function NavBar() {
                                     {item.name}
                                 </Disclosure.Button>
                             ))}
-                            <div className="flex flex-1 justify-center w-80 mix-blend-multiply absolute bottom-0 m-auto">
+                            <div className="w-80 mix-blend-multiply absolute bottom-0 m-auto">
                                 <img src="../../../logoKineJpg.png" alt="" />
                             </div>
                         </div>

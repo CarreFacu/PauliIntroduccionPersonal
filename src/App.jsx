@@ -1,18 +1,19 @@
 
-import './App.css'
 import NavBar from './components/navBar/NavBar.jsx'
-import Card from "./components/card/Card.jsx";
-import CarouselComponent from "./components/carousel/CarouselComponent.jsx";
-import {slidesData} from "../public/data.js";
+import Footer from './components/footer/Footer.jsx';
+import { Route, Routes } from 'react-router-dom';
+
+
+import MainContent from './components/Pages/MainContent.jsx';
+
 function App() {
   return (
     <>
-        <NavBar/>
-        <Card/>
-        <div className='sm:w-[80%] sm:m-auto sm:h-52 bg-grey-backgroud h-[428px] m-auto z-10'>
-            <CarouselComponent slides ={slidesData}/>
-        </div>
-
+      <NavBar />
+      <Routes>
+        <Route path='/' element={<MainContent />} />
+      </Routes>
+      <Footer />
     </>
   )
 }

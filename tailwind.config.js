@@ -7,8 +7,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        'grey-backgroud': '#dad7cd',
-        'subtitle': '#a3b18a'
+        'grey-background': '#dad7cd',
+        'subtitle': '#a3b18a',
+        'green-background':'#344e41'
       },
     },
   },

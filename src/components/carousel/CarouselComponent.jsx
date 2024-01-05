@@ -46,36 +46,6 @@ export default function CarouselComponent({slides}) {
                 ))}
             </div>
         </div>
-        // <div className="overflow-hidden relative h-52">
-        //     <div className="h-52 items-center w-[80%] m-auto justify-center">
-        //         {/* eslint-disable-next-line react/prop-types */}
-        //         {slides.map((s)=>{
-        //             // eslint-disable-next-line react/jsx-key
-        //             return <h3>{s.text}</h3>
-        //         })}
-        //     </div>
-        //      <div className='absolute top-0 h-full w-full justify-between items-center flex px-10 text-black '>
-        //          <button >
-        //              <SlArrowLeft/>
-        //          </button>
-        //          <button>
-        //              <SlArrowRight/>
-        //          </button>
-        //      </div>
-        // </div>
-        // <div className="overflow-hidden relative h-52 bg-grey-backgroud w-[80%] m-auto">
-        //     <div className={`flex  transition ease-out duration-500`} style={{transform: `translateX(${current*100}%)`}}>
-        //         {/* eslint-disable-next-line react/prop-types */}
-        //         {slides.map((slide) =>{
-        //             return(
-        //                 <div className="w-[60%]" key={slide.id}>
-        //                     <h2>{slide.text}</h2>
-        //                 </div>
-        //             )
-        //         })}
-        //     </div>
-
-        // </div>
 
     );
 }
