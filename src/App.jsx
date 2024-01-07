@@ -5,6 +5,7 @@ import { Route, Routes } from 'react-router-dom';
 
 
 import MainContent from './components/Pages/MainContent.jsx';
+import AboutMe from './components/Pages/AboutMe.jsx';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <NavBar />
       <Routes>
         <Route path='/' element={<MainContent />} />
+        <Route path='/about-me' element={<AboutMe />} />
       </Routes>
       <Footer />
     </>

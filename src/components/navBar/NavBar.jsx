@@ -5,8 +5,8 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Link } from 'react-router-dom'
 
 const navigation = [
-    { name: 'Dashboard', href: '#', current: true },
-    { name: 'Team', href: '#', current: false },
+    { name: 'Dashboard', href: '/', current: true },
+    { name: 'Acerda de mi', href: '/about-me', current: false },
     { name: 'Projects', href: '#', current: false },
     { name: 'Calendar', href: '#', current: false },
 ]
@@ -17,7 +17,7 @@ function classNames(...classes) {
 
 
 export default function NavBar() {
-    
+
     const [scrollEnabled, setScrollEnabled] = useState(true);
 
     const toggleScroll = () => {
@@ -25,13 +25,13 @@ export default function NavBar() {
         setScrollEnabled(!scrollEnabled);
         const body = document.body;
         if (!scrollEnabled) {
-          body.style.overflow = 'auto';
+            body.style.overflow = 'auto';
         } else {
-          body.style.overflow = 'hidden';
+            body.style.overflow = 'hidden';
         }
-      };
+    };
     return (
-        <Disclosure as="nav"  className="bg-grey-background h-52">
+        <Disclosure as="nav" className="bg-grey-background h-52">
             {({ open }) => (
                 <>
                     <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -50,16 +50,16 @@ export default function NavBar() {
                             </div>
                             <div className="flex flex-1 mt-36 items-center justify-evenly sm:justify-between">
                                 <div className="flex flex-shrink-0 items-center w-80 mix-blend-multiply">
-                                    <img src="../../../public/logoKineJpg.png" alt="" />
+                                    <img src="../../../logoKineJpg.png" alt="" />
                                 </div>
                                 <div className="hidden sm:ml-6 sm:block">
                                     <div className="flex space-x-4">
                                         {navigation.map((item) => (
                                             <Link
                                                 key={item.name}
-                                                to='/test'
+                                                to={item.href}
                                                 className={classNames(
-                                                    item.current ? 'font-medium bg-gray-900 text-white text-lg italic' : 'font-medium text-black hover:bg-gray-700 hover:text-white text-lg italic',
+                                                    item.current ? '' : 'font-medium text-black hover:bg-gray-700 hover:text-white text-lg italic',
                                                     'rounded-md px-3 py-2 text-sm font-medium'
                                                 )}
                                                 aria-current={item.current ? 'page' : undefined}
@@ -76,19 +76,18 @@ export default function NavBar() {
                     <Disclosure.Panel className="sm:hidden z-40 ">
                         <div className="bg-grey-background px-2 pb-3 pt-2 absolute top-0 right-0 min-h-full min-w-full z-40">
                             {navigation.map((item) => (
-                                <Disclosure.Button
-                                    onClick={toggleScroll}
-                                    key={item.name}
-                                    as="a"
-                                    href={item.href}
-                                    className={classNames(
-                                        item.current ? 'bg-gray-900 text-white text-lg italic' : 'text-black-300 hover:bg-gray-700 hover:text-white text-lg italic',
-                                        'block rounded-md px-3 py-2  font-medium text-lg italic'
-                                    )}
-                                    aria-current={item.current ? 'page' : undefined}
-                                >
-                                    {item.name}
-                                </Disclosure.Button>
+                                <Link  className='' to={item.href} key={item.name}>
+                                    <Disclosure.Button
+                                        onClick={toggleScroll}
+                                        className={classNames(
+                                            item.current ? '' : 'text-black-300 hover:bg-gray-700 hover:text-white text-lg italic',
+                                            'block rounded-md px-3 py-2  font-medium text-lg italic'
+                                        )}
+                                        aria-current={item.current ? 'page' : undefined}
+                                    >
+                                        {item.name}
+                                    </Disclosure.Button></Link>
+
                             ))}
                             <div className="w-80 mix-blend-multiply absolute bottom-0 m-auto">
                                 <img src="../../../logoKineJpg.png" alt="" />
