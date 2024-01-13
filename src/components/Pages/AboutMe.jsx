@@ -18,15 +18,13 @@ export default function AboutMe() {
                 <p className="mt-4 text-gray-500 animate__animated animate__backInLeft">
                     En el ámbito deportivo, la kinesiología desempeña un papel crucial en la prevención de lesiones y el desarrollo de programas de entrenamiento personalizados. Los kinesiólogos trabajan en colaboración con atletas para optimizar su rendimiento, corrigiendo desequilibrios musculares, mejorando la postura y diseñando ejercicios específicos para fortalecer áreas débiles.
                 </p>
-                <h3 className="text-4xl text-subtitle mt-4 m-auto">Me gusta lo que hago,</h3>
-                <h3 className="text-4xl text-subtitle mt-2  m-auto"> hago lo que me gusta</h3>
             </div>
-            <div className="xl:w-[250%] animate__animated animate__backInRight" >
-                <img className="xl:w-[250%]" src="../../miFoto.jpg" alt="" />
+            <div className="xl:w-[350%] animate__animated animate__backInRight" >
+                <img className="xl:w-[350%]" src="../../miFoto.jpg" alt="" />
             </div>
         </div>
 
-        <div className="flex flex-col-reverse mt-8 justify-center items-center m-auto gap-10 sm:gap-10 sm:m-auto xl:w-[100%] sm:mt-10 xl:flex-row bg-gray-500 xl:p-56 xl:h-full">
+        <div className="flex flex-col-reverse mt-8 justify-center items-center m-auto gap-10 sm:gap-10 sm:m-auto xl:w-[100%] sm:mt-10 xl:flex-row bg-gray-500 xl:p-32 xl:h-full">
             <div className="xl:w-[150%]" >
                 <img className="p-2 xl:w-[150%]" src="../../miFoto.jpg" alt="" />
             </div>

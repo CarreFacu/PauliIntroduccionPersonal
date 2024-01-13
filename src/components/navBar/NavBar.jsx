@@ -7,12 +7,11 @@ import { Link } from 'react-router-dom'
 const navigation = [
     { name: 'Dashboard', href: '/', current: true },
     { name: 'Acerda de mi', href: '/about-me', current: false },
-    { name: 'Projects', href: '#', current: false },
+    { name: 'Mis servicios', href: '/services', current: false },
     { name: 'Calendar', href: '#', current: false },
 ]
 
 function classNames(...classes) {
-    console.log('que mierda viene aca ', classes.filter(Boolean).join(' ') )
     return classes.filter(Boolean).join(' ')
 }
 
