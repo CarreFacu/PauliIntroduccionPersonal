@@ -2,7 +2,6 @@ import Card from "../card/Card.jsx";
 import CarouselComponent from "../carousel/CarouselComponent.jsx";
 import {slidesData} from "../../../public/data.js";
 export default function MainContent() {
-    console.log('estamos aca?')
     return (
         <div>
             <Card />
